@@ -107,7 +107,7 @@ def chat():
         actions = []
         for _ in range(4):
             response = client.chat.completions.create(
-                model=os.getenv("OPENAI_MODEL", "gpt-4o-mini"),
+                model=os.getenv("GROQ_MODEL", "openai/gpt-oss-20b"),
                 messages=safe_messages,
                 tools=TOOLS,
                 tool_choice="auto",
