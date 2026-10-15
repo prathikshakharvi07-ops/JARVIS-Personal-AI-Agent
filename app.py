@@ -10,12 +10,13 @@ from openai import OpenAI
 
 load_dotenv()
 app = Flask(__name__)
+
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 client = OpenAI(
     api_key=GROQ_API_KEY,
     base_url="https://api.groq.com/openai/v1",
-) if GROQ_API_KEY else None
+) if GROQ_API_KEY else None 
 
 SYSTEM_PROMPT = """You are JARVIS, a helpful Windows personal AI agent.
 You can chat, plan multi-step tasks, and use the provided browser tools.
