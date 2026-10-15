@@ -149,4 +149,8 @@ def action():
     return jsonify({"ok": False, "error": "Unsupported action."}), 400
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=int(os.getenv("PORT", "3000")), debug=False)
+    app.run(
+        host="127.0.0.1",
+        port=int(os.getenv("PORT", "3000")),
+        debug=False
+    )
