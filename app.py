@@ -81,8 +81,8 @@ def status():
     return jsonify({
         "ok": True,
         "app": "JARVIS",
-        "ai_configured": bool(os.getenv("OPENAI_API_KEY")),
-        "model": os.getenv("OPENAI_MODEL", "gpt-4o-mini"),
+        "ai_configured": bool(os.getenv("GROQ_API_KEY")),
+        "model": os.getenv("GROQ_MODEL", "openai/gpt-oss-20b"),
         "browser_actions": True,
         "message": "Local server is running."
     })
@@ -95,7 +95,7 @@ def chat():
         return jsonify({"error": "Send a non-empty messages array."}), 400
     if not client:
         return jsonify({
-            "error": "OpenAI API key is not configured. Copy .env.example to .env and add your API key, then restart JARVIS."
+            "error": "Groq API key is not configured. Add GROQ_API_KEY in Vercel Environment Variables."
         }), 503
     safe_messages = [{"role": "system", "content": SYSTEM_PROMPT}]
     for item in messages[-16:]:
