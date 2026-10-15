@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JARVIS — Personal AI Agent</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">J</div><div><div class="brand-name">JARVIS<span>.</span></div><div class="brand-sub">PERSONAL AI AGENT</div></div></div>
+    <div class="side-label">WORKSPACE</div>
+    <button class="nav active" data-view="chat"><span>◈</span> AI Workspace</button>
+    <button class="nav" data-view="tasks"><span>▤</span> Task activity</button>
+    <button class="nav" data-view="integrations"><span>⌘</span> Integrations</button>
+    <div class="side-label second">SYSTEM</div>
+    <button class="nav" data-view="settings"><span>⚙</span> Settings</button>
+    <div class="side-spacer"></div>
+    <div class="system-card"><div class="pulse"></div><div><strong>LOCAL AGENT</strong><small id="serverStatus">Checking server…</small></div></div>
+    <div class="sidebar-foot">NEXYRA INSPIRED UI <span>•</span> BUILD 1.0</div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><div class="eyebrow">PERSONAL INTELLIGENCE / <span id="crumb">WORKSPACE</span></div><h1 id="pageTitle">AI Workspace</h1></div><div class="top-actions"><div class="status-pill"><i></i><span id="aiStatus">AI NOT CONFIGURED</span></div><div class="avatar">J</div></div></header>
+    <section class="hero" id="hero">
+      <div class="hero-grid"></div><div class="hero-content"><div class="hero-tag"><span class="spark">✦</span> YOUR PERSONAL AI AGENT</div>
+      <h2>Make it happen.<br><span>Leave the steps to JARVIS.</span></h2>
+      <p>Describe your goal. JARVIS can reason through the request, help plan the steps, and open public websites or search the web when asked.</p>
+      <div class="hero-stats"><div><strong>01</strong><small>UNDERSTAND</small></div><b>→</b><div><strong>02</strong><small>EXECUTE</small></div><b>→</b><div><strong>03</strong><small>REPORT</small></div></div>
+      </div><div class="orb"><div class="orb-core">J</div><span class="orbit o1"></span><span class="orbit o2"></span><span class="orbit o3"></span><div class="orb-label">JARVIS CORE <i></i></div></div>
+    </section>
+    <section class="metrics" id="metrics">
+      <div class="metric"><div class="metric-icon blue">⌘</div><div><small>AGENT STATUS</small><strong id="mAgent">INITIALIZING</strong><span>Local web service</span></div></div>
+      <div class="metric"><div class="metric-icon green">✓</div><div><small>BROWSER ACTIONS</small><strong>ENABLED</strong><span>Open + search public pages</span></div></div>
+      <div class="metric"><div class="metric-icon purple">✦</div><div><small>AI ENGINE</small><strong id="mModel">OpenAI API</strong><span>Requires your API key</span></div></div>
+    </section>
+    <section class="content-grid" id="chatView">
+      <div class="chat-panel panel">
+        <div class="panel-head"><div><div class="panel-title">Conversation</div><div class="panel-sub">Tell JARVIS what you want to accomplish</div></div><button class="ghost-btn" id="clearBtn">↻ New chat</button></div>
+        <div class="messages" id="messages"><div class="welcome"><div class="welcome-icon">✧</div><h3>Good to have you here.</h3><p>I'm JARVIS. What's the goal today?</p><div class="suggestions"><button data-prompt="Open https://github.com in my browser">Open GitHub</button><button data-prompt="Search the web for beginner AI/ML project ideas">Search AI/ML ideas</button><button data-prompt="Help me plan a multi-step workflow to organize a coding project">Plan a workflow</button></div></div></div>
+        <form class="composer" id="chatForm"><textarea id="userInput" rows="1" placeholder="Message JARVIS… (e.g. Open GitHub and help me plan my next steps)" required></textarea><div class="composer-bottom"><span><i class="lock">▣</i> Local session · Never paste passwords or API keys here</span><button class="send-btn" id="sendBtn" type="submit">Send <span>↑</span></button></div></form>
+      </div>
+      <div class="right-column"><div class="panel task-panel"><div class="panel-head"><div><div class="panel-title">Task monitor</div><div class="panel-sub">Recent execution events</div></div><span class="live-tag"><i></i> LIVE</span></div><div id="activity" class="activity"><div class="empty-activity"><div>⌁</div><strong>Ready for a task</strong><p>When JARVIS takes an action, it will appear here.</p></div></div></div>
+      <div class="panel quick-panel"><div class="panel-title">Quick actions</div><div class="quick-actions"><button data-action="open" data-value="https://github.com"><span class="qa-icon">↗</span><span><b>Open GitHub</b><small>Launch in your browser</small></span><span class="arrow">›</span></button><button data-action="open" data-value="https://chatgpt.com"><span class="qa-icon">↗</span><span><b>Open ChatGPT</b><small>Launch in your browser</small></span><span class="arrow">›</span></button><button id="searchQuick"><span class="qa-icon">⌕</span><span><b>Web search</b><small>Search a topic</small></span><span class="arrow">›</span></button></div></div></div>
+    </section>
+    <section class="panel other-view hidden" id="otherView"></section>
+    <footer>JARVIS PERSONAL AI AGENT <span>•</span> WINDOWS LOCAL MODE <span>•</span> YOUR KEYS STAY IN .ENV</footer>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<script src="/static/app.js"></script>
+</body></html>
